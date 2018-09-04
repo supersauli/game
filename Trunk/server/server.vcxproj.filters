@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Tool">
+      <UniqueIdentifier>{c5bb4560-0424-4e10-b22d-4af419f22cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd">
+      <UniqueIdentifier>{8d5cd78d-1495-4b04-bcfe-4fcafd870b5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\json">
+      <UniqueIdentifier>{d88427ac-13b5-468e-bef9-42c4a67e989e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\zip">
+      <UniqueIdentifier>{2aab6eb9-7155-42b9-a373-8badbe00965d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\json\error">
+      <UniqueIdentifier>{72337976-0937-4afb-9a82-8ca945863b53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\json\nternal">
+      <UniqueIdentifier>{ed35fea4-9e4f-4c27-b967-9afd7992ddd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\json\msinttypes">
+      <UniqueIdentifier>{644490b7-641c-44f8-80d3-35309e67d12b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTesting">
+      <UniqueIdentifier>{527c44ca-6618-4e2e-b4d4-43edc17c5f78}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Tool\Compress.cpp">
+      <Filter>Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="3rd\zip\lz4.c">
+      <Filter>3rd\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTesting\CompressTest.cpp">
+      <Filter>UnitTesting</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Tool\Compress.h">
+      <Filter>Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\zip\lz4.h">
+      <Filter>3rd\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\error\en.h">
+      <Filter>3rd\json\error</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\error\error.h">
+      <Filter>3rd\json\error</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\biginteger.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\diyfp.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\dtoa.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\ieee754.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\itoa.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\meta.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\pow10.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\regex.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\stack.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\strfunc.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\strtod.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\internal\swap.h">
+      <Filter>3rd\json\nternal</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\msinttypes\inttypes.h">
+      <Filter>3rd\json\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\msinttypes\stdint.h">
+      <Filter>3rd\json\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\allocators.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\document.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\encodedstream.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\encodings.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\filereadstream.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\filewritestream.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\fwd.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\istreamwrapper.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\memorybuffer.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\memorystream.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\ostreamwrapper.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\pointer.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\prettywriter.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\rapidjson.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\reader.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\schema.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\stream.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\stringbuffer.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\json\writer.h">
+      <Filter>3rd\json</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
