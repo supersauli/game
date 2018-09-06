@@ -1,0 +1,21 @@
+﻿
+
+<linker>
+
+	<assembly fullname="Assembly-CSharp">
+	    <type fullname="CData" preserve="all"/>
+		<type fullname="Tutorial.BaseClass" preserve="all"/>
+		<type fullname="Tutorial.TestEnum" preserve="all"/>
+		<type fullname="Tutorial.DrivenClass" preserve="all"/>
+		<type fullname="Tutorial.DrivenClass+TestEnumInner" preserve="all"/>
+		<type fullname="Tutorial.ICalc" preserve="all"/>
+		<type fullname="Tutorial.DrivenClassExtensions" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="mscorlib">
+	    <type fullname="System.Object" preserve="all"/>
+		
+	</assembly>
+
+</linker>
