@@ -16,30 +16,7 @@ namespace XLua
     public partial class DelegateBridge : DelegateBridgeBase
     {
 		
-		public int __Gen_Delegate_Imp0(int p0, int p1)
-		{
-#if THREAD_SAFE || HOTFIX_ENABLE
-            lock (luaEnv.luaEnvLock)
-            {
-#endif
-                RealStatePtr L = luaEnv.rawL;
-                int errFunc = LuaAPI.pcall_prepare(L, errorFuncRef, luaReference);
-                
-                LuaAPI.xlua_pushinteger(L, p0);
-                LuaAPI.xlua_pushinteger(L, p1);
-                
-                PCall(L, 2, 1, errFunc);
-                
-                
-                int __gen_ret = LuaAPI.xlua_tointeger(L, errFunc + 1);
-                LuaAPI.lua_settop(L, errFunc - 1);
-                return  __gen_ret;
-#if THREAD_SAFE || HOTFIX_ENABLE
-            }
-#endif
-		}
-        
-		public void __Gen_Delegate_Imp1()
+		public void __Gen_Delegate_Imp0()
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -60,7 +37,7 @@ namespace XLua
 #endif
 		}
         
-		public int __Gen_Delegate_Imp2(int p0, string p1, out CSCallLua.DClass p2)
+		public int __Gen_Delegate_Imp1(int p0, string p1, out CSCallLua.DClass p2)
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -84,7 +61,7 @@ namespace XLua
 #endif
 		}
         
-		public System.Action __Gen_Delegate_Imp3()
+		public System.Action __Gen_Delegate_Imp2()
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -105,6 +82,29 @@ namespace XLua
 #endif
 		}
         
+		public int __Gen_Delegate_Imp3(int p0, int p1)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int errFunc = LuaAPI.pcall_prepare(L, errorFuncRef, luaReference);
+                
+                LuaAPI.xlua_pushinteger(L, p0);
+                LuaAPI.xlua_pushinteger(L, p1);
+                
+                PCall(L, 2, 1, errFunc);
+                
+                
+                int __gen_ret = LuaAPI.xlua_tointeger(L, errFunc + 1);
+                LuaAPI.lua_settop(L, errFunc - 1);
+                return  __gen_ret;
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
         
 		static DelegateBridge()
 		{
@@ -114,24 +114,24 @@ namespace XLua
 		public override Delegate GetDelegateByType(Type type)
 		{
 		
-		    if (type == typeof(AddFunc))
-			{
-			    return new AddFunc(__Gen_Delegate_Imp0);
-			}
-		
 		    if (type == typeof(System.Action))
 			{
-			    return new System.Action(__Gen_Delegate_Imp1);
+			    return new System.Action(__Gen_Delegate_Imp0);
 			}
 		
 		    if (type == typeof(CSCallLua.FDelegate))
 			{
-			    return new CSCallLua.FDelegate(__Gen_Delegate_Imp2);
+			    return new CSCallLua.FDelegate(__Gen_Delegate_Imp1);
 			}
 		
 		    if (type == typeof(CSCallLua.GetE))
 			{
-			    return new CSCallLua.GetE(__Gen_Delegate_Imp3);
+			    return new CSCallLua.GetE(__Gen_Delegate_Imp2);
+			}
+		
+		    if (type == typeof(AddFunc))
+			{
+			    return new AddFunc(__Gen_Delegate_Imp3);
 			}
 		
 		    return null;
