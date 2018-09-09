@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="3rd\zip\lz4.c" />
     <ClCompile Include="Tool\Compress.cpp" />
+    <ClCompile Include="Tool\UtilFunction.cpp" />
     <ClCompile Include="UnitTesting\CompressTest.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +61,12 @@
     <ClInclude Include="3rd\json\stringbuffer.h" />
     <ClInclude Include="3rd\json\writer.h" />
     <ClInclude Include="3rd\zip\lz4.h" />
+    <ClInclude Include="Define\TypeDefine.h" />
+    <ClInclude Include="Define\VarList.h" />
     <ClInclude Include="Tool\Compress.h" />
+    <ClInclude Include="Tool\EventCallBack.h" />
+    <ClInclude Include="Tool\UtilFunction.h" />
+    <ClInclude Include="Tool\utilTime.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

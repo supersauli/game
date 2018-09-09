@@ -25,6 +25,9 @@
     <Filter Include="UnitTesting">
       <UniqueIdentifier>{527c44ca-6618-4e2e-b4d4-43edc17c5f78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Define">
+      <UniqueIdentifier>{2f35b41b-9f7e-4439-9fd2-99a651b77609}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tool\Compress.cpp">
@@ -35,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="UnitTesting\CompressTest.cpp">
       <Filter>UnitTesting</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool\UtilFunction.cpp">
+      <Filter>Tool</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +154,21 @@
     </ClInclude>
     <ClInclude Include="3rd\json\writer.h">
       <Filter>3rd\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool\EventCallBack.h">
+      <Filter>Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool\UtilFunction.h">
+      <Filter>Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Define\TypeDefine.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool\utilTime.h">
+      <Filter>Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Define\VarList.h">
+      <Filter>Tool</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
