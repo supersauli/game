@@ -72,7 +72,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static bool DifferentInt(const DWORD& num, const int& min, const int& max, std::set<int>&diffNum);
+	static bool DifferentInt(const DWORD& num, const int& begin, const int& end, std::set<int>&diffNum);
 
 	/**
 	* @brief  ×Ö·û´®ÊÇ·ñÎª¿Õ
@@ -147,7 +147,12 @@ namespace Tool
 	static std::string AsString(T value) {
 		return std::string(value);
 	}
-
+	template<class T>
+	struct Error {
+		enum {
+			value = 0,
+		};
+	};
 	template<typename T, typename M>
 	static void AsTransform(T&out, M&in) {
 		static_assert(Error<T>::value, "error as Transorm");
