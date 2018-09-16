@@ -1,8 +1,13 @@
 #ifndef _DEFINE_H__
 #define _DEFINE_H__
+
 #define SAFE_DEL(x){if((x)){delete((x));x=NULL;}}
 #define SAFE_DEL_ARRAY(x){if((x)){delete [] ((x)); x=NULL}}
 #define CHECK_NULL_RETURN(x)do{if(x==nullptr)return nullptr;}while(false)
+#include "PlatformDefine.h"
+#ifdef Q_OS_WIN
+	#include <windows.h>
+#endif // 
 
 
 
@@ -24,54 +29,57 @@ typedef long LONG;
 /**
 * @brief FLOAT
 */
-
 typedef float FLOAT;
 
 /**
 * @brief char
 */
-
 typedef char CHAR;
+
 /**
 * @brief unsingend char
 */
-
 typedef unsigned char BYTE;
+
 /**
 * @brief unsigned short
 */
-
 typedef unsigned short WORD;
+
 /**
 * @brief signed short
 */
-
 typedef signed short SWORD;
+
 /**
 * @brief unsigned int
 */
-
+#ifndef Q_OS_WIN
 typedef unsigned int DWORD;
+#endif 
 
 /**
 * @brief signed int
 */
-
 typedef signed int SDWORD;
+
 /**
 * @brief unsigned long
 */
-
 typedef unsigned long QWORD;
+
 /**
 * @brief signed long
 */
-
 typedef signed long SQWORD;
+
+
+#ifndef Q_OS_WIN
 /**
 * @brief INT64
 */
 typedef long INT64;
+#endif
 
 /**
 * @brief double

@@ -81,18 +81,22 @@ float Tool::RandomFloat(const float& min, const float& max) {
 *
 * @return
 */
-bool Tool::DifferentInt(const DWORD& num, const int& min, const int& max, std::set<int>&diffNum) {
-	auto maxNum = static_cast<DWORD>(std::max(min, max));
-	auto minNum = static_cast<DWORD>(std::min(min, max));
-	if (maxNum - minNum < num) {
+bool Tool::DifferentInt(const DWORD& num, const int& begin, const int& end, std::set<int>&diffNum) {
+	struct ValueGroup
+	{
+		int _min;
+		int _max;
+	};
+	const auto valueGroup = begin < end ? ValueGroup{ begin,end } : ValueGroup{ begin,end };
+	if (static_cast<DWORD>(valueGroup._max - valueGroup._min) < num) {
 		return false;
 	}
-	std::uniform_int_distribution<int>       dis(min, max);
+	std::uniform_int_distribution<int> dis(valueGroup._min, valueGroup._max);
 	static int maxRandom = 100000000;
 	int randomTimes = num;
 	do {
 		int result = dis(urandom);
-		auto it = diffNum.find(result);
+		const auto it = diffNum.find(result);
 		if (it == diffNum.end()) {
 			diffNum.insert(result);
 			if (--randomTimes) {
@@ -169,7 +173,6 @@ DWORD Tool::GetCRC(const BYTE * buf, int nLength)
 
 void Tool::SSleep(DWORD seconds)
 {
-#ifdef __linux
 	struct timeval tv;
 	tv.tv_sec = seconds;
 	tv.tv_usec = 0;
@@ -178,12 +181,10 @@ void Tool::SSleep(DWORD seconds)
 		err = select(0, nullptr, nullptr, nullptr, &tv);
 	} while (err<0 && errno == EINTR);
 
-#endif
 }
 
 void Tool::MSleep(QWORD msec)
 {
-#ifdef __linux
 	struct timeval tv;
 	tv.tv_sec = msec / 1000;
 	tv.tv_usec = (msec % 1000) * 1000;
@@ -191,13 +192,11 @@ void Tool::MSleep(QWORD msec)
 	do {
 		err = select(0, nullptr, nullptr, nullptr, &tv);
 	} while (err<0 && errno == EINTR);
-#endif
 
 }
 
 void Tool::USleep(QWORD usec)
 {
-#ifdef __linux
 	struct timeval tv;
 	tv.tv_sec = usec / 1000000;
 	tv.tv_usec = usec % 1000000;
@@ -206,7 +205,6 @@ void Tool::USleep(QWORD usec)
 	do {
 		err = select(0, nullptr, nullptr, nullptr, &tv);
 	} while (err<0 && errno == EINTR);
-#endif
 
 }
 

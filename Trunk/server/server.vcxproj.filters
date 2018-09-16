@@ -28,6 +28,9 @@
     <Filter Include="Define">
       <UniqueIdentifier>{2f35b41b-9f7e-4439-9fd2-99a651b77609}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Net">
+      <UniqueIdentifier>{e95c70af-c236-4e1c-aacb-75dfeb4d90e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tool\Compress.cpp">
@@ -41,6 +44,15 @@
     </ClCompile>
     <ClCompile Include="Tool\UtilFunction.cpp">
       <Filter>Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\ServerSocket.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTesting\ICOPTest.cpp">
+      <Filter>UnitTesting</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTesting\ICOPClient.h">
+      <Filter>UnitTesting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -164,11 +176,23 @@
     <ClInclude Include="Define\TypeDefine.h">
       <Filter>Define</Filter>
     </ClInclude>
-    <ClInclude Include="Tool\utilTime.h">
+    <ClInclude Include="Tool\UtilTime.h">
       <Filter>Tool</Filter>
     </ClInclude>
-    <ClInclude Include="Define\VarList.h">
+    <ClInclude Include="Tool\VarList.h">
       <Filter>Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Define\PlatformDefine.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\ServerSocket.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\Mutex.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTesting\IOCPServer.h">
+      <Filter>UnitTesting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

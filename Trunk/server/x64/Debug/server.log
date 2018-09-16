@@ -1,1 +1,21 @@
-﻿  server.vcxproj -> E:\worker\game\Trunk\server\x64\Debug\server.exe
+﻿  lz4.c
+  ServerSocket.cpp
+d:\selfproject\game\game\trunk\server\net\serversocket.cpp(45): warning C4101: “byteTransfeered”: 未引用的局部变量
+d:\selfproject\game\game\trunk\server\net\serversocket.cpp(67): warning C4018: “<”: 有符号/无符号不匹配
+d:\selfproject\game\game\trunk\server\net\serversocket.cpp(81): warning C4244: “=”: 从“SOCKET”转换到“int”，可能丢失数据
+d:\selfproject\game\game\trunk\server\net\serversocket.cpp(122): warning C4244: “初始化”: 从“SOCKET”转换到“int”，可能丢失数据
+d:\selfproject\game\game\trunk\server\net\serversocket.cpp(122): warning C4244: “初始化”: 从“SOCKET”转换到“const int”，可能丢失数据
+d:\selfproject\game\game\trunk\server\net\serversocket.cpp(130): warning C4312: “reinterpret_cast”: 从“const int”转换到更大的“void *”
+  Compress.cpp
+d:\selfproject\game\game\trunk\server\tool\compress.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  UtilFunction.cpp
+  CompressTest.cpp
+d:\selfproject\game\game\trunk\server\tool\compress.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\selfproject\game\game\trunk\server\unittesting\compresstest.cpp(9): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  ICOPClient.h
+  ICOPTest.cpp
+d:\selfproject\game\game\trunk\server\unittesting\iocpserver.h(152): warning C4311: “类型强制转换”: 从“PER_HANDLE_DATA *”到“DWORD”的指针截断
+d:\selfproject\game\game\trunk\server\unittesting\iocpserver.h(152): warning C4302: “类型强制转换”: 从“PER_HANDLE_DATA *”到“DWORD”截断
+d:\selfproject\game\game\trunk\server\unittesting\iocpserver.h(184): warning C4101: “RecvBytes”: 未引用的局部变量
+  正在生成代码...
+  server.vcxproj -> D:\selfproject\Game\game\Trunk\server\x64\Debug\server.exe
