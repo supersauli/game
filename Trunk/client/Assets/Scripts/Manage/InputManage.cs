@@ -22,6 +22,7 @@ public class InputManage : MonoBehaviour {
 	   InputExtern();
 
         _systems.Execute();
+	    _systems.Cleanup();
 	}
     // 方向键
     void InputDirKey()

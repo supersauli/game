@@ -23,7 +23,7 @@ public class AttackSkillSysteam : ReactiveSystem<InputEntity>
     {
         foreach (var e in entities)
         {
-            Debug.Log("Attack1");
+            
         }
     }
 
