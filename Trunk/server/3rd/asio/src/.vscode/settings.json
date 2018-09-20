@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.txt": "lua",
+        "memory": "cpp"
+    }
+}
