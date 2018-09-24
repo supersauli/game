@@ -114,7 +114,7 @@ bool Tool::DifferentInt(const DWORD& num, const int& begin, const int& end, std:
 *
 * @return
 */
-bool Tool::CharIsNull(const char* str) {
+bool Tool::CheckIsEmpty(const char* str) {
 	return str == nullptr || str[0] == '\0';
 }
 
@@ -170,60 +170,59 @@ DWORD Tool::GetCRC(const BYTE * buf, int nLength)
 	return crc;
 }
 
-
 void Tool::SSleep(DWORD seconds)
 {
-	struct timeval tv;
+	/*struct timeval tv;
 	tv.tv_sec = seconds;
 	tv.tv_usec = 0;
 	int err;
 	do {
 		err = select(0, nullptr, nullptr, nullptr, &tv);
 	} while (err<0 && errno == EINTR);
-
+*/
 }
 
 void Tool::MSleep(QWORD msec)
 {
-	struct timeval tv;
-	tv.tv_sec = msec / 1000;
-	tv.tv_usec = (msec % 1000) * 1000;
-	int err;
-	do {
-		err = select(0, nullptr, nullptr, nullptr, &tv);
-	} while (err<0 && errno == EINTR);
+	//struct timeval tv;
+	//tv.tv_sec = msec / 1000;
+	//tv.tv_usec = (msec % 1000) * 1000;
+	//int err;
+	//do {
+	//	err = select(0, nullptr, nullptr, nullptr, &tv);
+	//} while (err<0 && errno == EINTR);
 
 }
 
 void Tool::USleep(QWORD usec)
 {
-	struct timeval tv;
+	/*struct timeval tv;
 	tv.tv_sec = usec / 1000000;
 	tv.tv_usec = usec % 1000000;
 	int err;
 
 	do {
 		err = select(0, nullptr, nullptr, nullptr, &tv);
-	} while (err<0 && errno == EINTR);
+	} while (err<0 && errno == EINTR);*/
 
 }
 
 int Tool::AsInt(const char* str) {
-	if (CharIsNull(str)) {
+	if (CheckIsEmpty(str)) {
 		return 0;
 	}
 	return atoi(str);
 };
 
 DOUBLE Tool::AsDouble(const char* str, DOUBLE defaultVal) {
-	if (CharIsNull(str)) {
+	if (CheckIsEmpty(str)) {
 		return defaultVal;
 	}
 	return strtod(str, nullptr);
 }
 
 float Tool::AsFloat(const char* str, float defaultVal) {
-	if (CharIsNull(str)) {
+	if (CheckIsEmpty(str)) {
 		return defaultVal;
 	}
 	return static_cast<float>(std::atof(str));  // NOLINT(cert-err34-c)

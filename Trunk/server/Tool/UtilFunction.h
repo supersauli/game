@@ -5,7 +5,7 @@
 #include <time.h>
 #include <set>
 #include <string>
-#include "../Define/TypeDefine.h"
+#include "../Define/PlatformDefine.h"
 
 namespace Tool
 {
@@ -81,7 +81,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static	bool CharIsNull(const char* str);
+	static	bool CheckIsEmpty(const char* str);
 
 	/**
 	* @brief µÃµ½crc
@@ -217,7 +217,7 @@ namespace Tool
 		std::string src = srcStr;
 		std::string::size_type pos1 = 0, pos2 = 0;
 
-		if (!CharIsNull(splictStr)) {
+		if (!CheckIsEmpty(splictStr)) {
 			do {
 				pos2 = src.find(splictStr, pos1);
 				if (pos2 == std::string::npos) {

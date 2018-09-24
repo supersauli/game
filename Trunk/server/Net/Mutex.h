@@ -16,7 +16,7 @@ public:
 		#if defined(Q_OS_WIN)
 			_hMutex = CreateMutex(nullptr, false, nullptr);
 		#else defined(Q_OS_LINUX)
-			pthread_mutex_init(&_mutex, NULL);
+			pthread_mutex_init(&_mutex, nullptr);
 		#endif
 	}
 	~AutoMutex()

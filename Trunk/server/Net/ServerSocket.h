@@ -1,25 +1,39 @@
 #ifndef __SERVER_SOCKET_H__
 #define __SERVER_SOCKET_H__
-#include <Winsock2.h>
+#include "../3rd/asio/include/asio.hpp"
+#include "Connection.h"
 
 class ServerSocket
 {
 public:
-	bool Init();
-private:
-	bool InitPthread();
-	bool CreateSocket();
-	bool Bind();
-	bool Listen();
-	void Run();
-	static void ServerReadThread();
-
+	ServerSocket(unsigned short port)
+		:_acceptor(_ioContext,tcp::endpoint(tcp::v4(),port))
+	{
+		Start();
+	}
 
 private:
-	sockaddr_in _srvAddr{};
-	int _listenSocket{0};
-	void * _completionPort{ nullptr };
+	void Start()
+	{
+		auto newConnection = Connection::Create(_acceptor.get_executor()().context());;
+		_acceptor.async_accept(newConnection->_socket(),
+			std::bind(&ServerSocket::HandAccept, this, newConnection,
+				asio::placeholders::error));
+	}
+	void HandleAccept(Connection::Pointer &newConnection,
+		const asio::error_code&error)
+	{
+		if(!error)
+		{
+			newConnection->Start();
+		}
+	}
+
+
+	asio::io_context _ioContext;
+	tcp::acceptor _acceptor;
 };
+
 
 
 
