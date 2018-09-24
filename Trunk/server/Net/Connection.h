@@ -38,7 +38,7 @@ private:
 			_socket.async_wait(tcp::socket::wait_read,
 				std::bind(&Connection::Read
 					,shared_from_this()
-					,asio::placeholders::error
+					,std::placeholders::_1
 					));
 		}
 
@@ -48,7 +48,7 @@ private:
 			_socket.async_wait(tcp::socket::wait_write,
 				std::bind(&Connection::Write
 					, shared_from_this()
-					, asio::placeholders::error));
+					, std::placeholders::_1));
 		}
 	};
 	void Read(asio::error_code ec)

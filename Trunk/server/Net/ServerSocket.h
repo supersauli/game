@@ -2,7 +2,7 @@
 #define __SERVER_SOCKET_H__
 #include "../3rd/asio/include/asio.hpp"
 #include "Connection.h"
-
+using namespace asio;
 class ServerSocket
 {
 public:
@@ -11,15 +11,20 @@ public:
 	{
 		Start();
 	}
+	void Run()
+	{
+		_ioContext.run();
+	}
 
 private:
 	void Start()
 	{
-		auto newConnection = Connection::Create(_acceptor.get_executor()().context());;
-		_acceptor.async_accept(newConnection->_socket(),
-			std::bind(&ServerSocket::HandAccept, this, newConnection,
-				asio::placeholders::error));
+		auto newConnection = Connection::Create(_acceptor.get_executor().context());;
+		_acceptor.async_accept(newConnection->GetSocket(),
+			std::bind(&ServerSocket::HandleAccept, this, newConnection,
+				std::placeholders::_1));
 	}
+
 	void HandleAccept(Connection::Pointer &newConnection,
 		const asio::error_code&error)
 	{
