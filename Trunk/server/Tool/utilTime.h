@@ -1,9 +1,9 @@
 #ifndef _STIME_H__
 #define _STIME_H__
-#include <time.h>
-#include <stdio.h>
+#include <ctime>
+#include <cstdio>
 #include <list>
-#include "../Define/TypeDefine.h"
+#include "../Define/PlatformDefine.h"
 
 namespace Tool {
 	/**

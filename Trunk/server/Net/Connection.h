@@ -8,10 +8,10 @@ using namespace asio;
 class Connection :public std::enable_shared_from_this<Connection>
 {
 public:
-typedef std::shared_ptr<Connection>	Pointer;
-	static Pointer Create(asio::io_context&ioContext)
+	Connection(tcp::socket socket)
+		: _socket(std::move(socket)),
+		 _consummer(_socket)
 	{
-		return Pointer(new Connection(ioContext));
 	}
 	
 	asio::ip::tcp::socket& GetSocket()
@@ -26,10 +26,7 @@ typedef std::shared_ptr<Connection>	Pointer;
 
 
 private:
-	Connection(asio::io_context& ioContext)
-	:_socket(ioContext),
-	_consummer(_socket)
-	{}
+	
 	void StartOperations()
 	{
 		if(_consummer.CanRead()&&!_readInProgress)

@@ -16,7 +16,7 @@
 #include "asio/detail/config.hpp"
 
 #if defined(ASIO_HEADER_ONLY)
-//# error Do not compile Asio library source with ASIO_HEADER_ONLY defined
+# error Do not compile Asio library source with ASIO_HEADER_ONLY defined
 #endif
 
 #include "asio/impl/error.ipp"

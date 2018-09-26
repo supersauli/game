@@ -480,6 +480,7 @@
     <ClInclude Include="3rd\json\writer.h" />
     <ClInclude Include="3rd\zip\lz4.h" />
     <ClInclude Include="Define\PlatformDefine.h" />
+    <ClInclude Include="Net\ClientSocket.h" />
     <ClInclude Include="Net\Connection.h" />
     <ClInclude Include="Net\Consumer.h" />
     <ClInclude Include="Net\Mutex.h" />
@@ -558,7 +559,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>ASIO_STANDALONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ASIO_STANDALONE;DASIO_SEPARATE_COMPILATION;ASIO_SEPARATE_COMPILATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
