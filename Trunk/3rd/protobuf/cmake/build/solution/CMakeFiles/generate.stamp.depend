@@ -1,0 +1,46 @@
+# CMake generation dependency list for this directory.
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeCInformation.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeCXXInformation.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeDependentOption.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeGenericSystem.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeRCInformation.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CheckIncludeFile.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CheckLibraryExists.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/CheckSymbolExists.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Compiler/MSVC-C.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Compiler/MSVC-CXX.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/FindPackageMessage.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/FindThreads.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/FindZLIB.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/GNUInstallDirs.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Platform/Windows-MSVC-C.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Platform/Windows-MSVC.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Platform/Windows.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/Platform/WindowsPaths.cmake
+D:/Program Files/CMake/share/cmake-3.12/Modules/SelectLibraryConfigurations.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/CMakeLists.txt
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/3.12.2/CMakeCCompiler.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/3.12.2/CMakeCXXCompiler.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/3.12.2/CMakeRCCompiler.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/3.12.2/CMakeSystem.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/extract_includes.bat.in
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/install.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/libprotobuf-lite.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/libprotobuf.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/libprotoc.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/protobuf-config-version.cmake.in
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/protobuf-config.cmake.in
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/protobuf-lite.pc.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/protobuf-module.cmake.in
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/protobuf-options.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/protobuf.pc.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/protoc.cmake
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/version.rc.in

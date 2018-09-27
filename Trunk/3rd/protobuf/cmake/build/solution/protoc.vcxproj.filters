@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\compiler\main.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\version.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9D123186-9F6E-3926-9A3A-A49B99FD5965}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

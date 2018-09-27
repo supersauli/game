@@ -1,0 +1,38 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_cd024.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+用于 .NET Framework 的 Microsoft (R) 生成引擎版本 15.8.166+gd4e8d81a88
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018/9/19/周三 21:55:12。
+节点 1 上的项目“D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\cmTC_cd024.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_cd024.dir\Debug\”。
+  正在创建目录“D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_cd024.dir\Debug\cmTC_cd024.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_cd024.dir\Debug\cmTC_cd024.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cd024.dir\Debug\\" /Fd"cmTC_cd024.dir\Debug\vc141.pdb" /Gd /TC /FC /errorReport:queue D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.15.26726 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cd024.dir\Debug\\" /Fd"cmTC_cd024.dir\Debug\vc141.pdb" /Gd /TC /FC /errorReport:queue D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  CheckIncludeFile.c
+  
+d:\selfproject\game\game\trunk\3rd\protobuf\cmake\build\solution\cmakefiles\cmaketmp\checkincludefile.c(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\cmTC_cd024.vcxproj]
+已完成生成项目“D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\cmTC_cd024.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\cmTC_cd024.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  d:\selfproject\game\game\trunk\3rd\protobuf\cmake\build\solution\cmakefiles\cmaketmp\checkincludefile.c(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\CMakeFiles\CMakeTmp\cmTC_cd024.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.58
+
+

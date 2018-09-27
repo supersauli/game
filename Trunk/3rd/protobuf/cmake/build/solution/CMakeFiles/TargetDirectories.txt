@@ -1,0 +1,7 @@
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/protoc.dir
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/libprotobuf-lite.dir
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/libprotoc.dir
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/libprotobuf.dir
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/INSTALL.dir
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/ALL_BUILD.dir
+D:/selfproject/Game/game/Trunk/3rd/protobuf/cmake/build/solution/CMakeFiles/ZERO_CHECK.dir

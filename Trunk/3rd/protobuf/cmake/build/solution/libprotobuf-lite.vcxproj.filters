@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\arena.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\arenastring.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\extension_set.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\generated_message_table_driven_lite.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\generated_message_util.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\implicit_weak_message.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\io\coded_stream.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\io\zero_copy_stream.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\io\zero_copy_stream_impl_lite.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\message_lite.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\repeated_field.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\bytestream.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\common.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\int128.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\io_win32.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\status.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\statusor.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\stringpiece.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\stringprintf.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\structurally_valid.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\strutil.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\time.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\wire_format_lite.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\arena.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\arenastring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\extension_set.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\generated_message_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\implicit_weak_message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\io\coded_stream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\io\zero_copy_stream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\io\zero_copy_stream_impl_lite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\message_lite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\repeated_field.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\bytestream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\int128.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\once.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\status.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\statusor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\stringpiece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\stringprintf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\strutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\stubs\time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\src\google\protobuf\wire_format_lite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="D:\selfproject\Game\game\Trunk\3rd\protobuf\cmake\build\solution\version.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9B754F3A-4AC8-3290-8AA0-90B951A1D53E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9D123186-9F6E-3926-9A3A-A49B99FD5965}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
