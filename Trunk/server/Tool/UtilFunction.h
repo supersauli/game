@@ -1,13 +1,13 @@
-#ifndef __HELP_FUNCTION_H__
-#define __HELP_FUNCTION_H__
+#ifndef __UTIL_FUNCTION_H__
+#define __UTIL_FUNCTION_H__
 
 #include <random>
 #include <time.h>
 #include <set>
 #include <string>
-#include "../Define/PlatformDefine.h"
+#include "../Define/TypeDefine.h"
 
-namespace Tool
+namespace Util
 {
 
 	/**
@@ -15,7 +15,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static int RandomInt();
+	 int RandomInt();
 
 	/**
 	* @brief 范围[0,max]
@@ -24,7 +24,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static int RandomInt(const int& max);
+	  int RandomInt(const int& max);
 
 	/**
 	* @brief 范围[min,max]
@@ -34,14 +34,14 @@ namespace Tool
 	*
 	* @return
 	*/
-	static int RandomInt(const int& min, const int& max);
+	  int RandomInt(const int& min, const int& max);
 
 	/**
 	* @brief 范围[0.0, 1.0)
 	*
 	* @return
 	*/
-	static float RandomFloat();
+	  float RandomFloat();
 
 	/**
 	* @brief 范围[0.0,max)
@@ -50,7 +50,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static float RandomFloat(const float max);
+	  float RandomFloat(const float max);
 
 	/**
 	* @brief 范围[min,max)
@@ -60,7 +60,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static float RandomFloat(const float& min, const float& max);
+	  float RandomFloat(const float& min, const float& max);
 
 	/**
 	* @brief 获得一定范围内的不重复整数
@@ -72,7 +72,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static bool DifferentInt(const DWORD& num, const int& begin, const int& end, std::set<int>&diffNum);
+	  bool DifferentInt(const DWORD& num, const int& begin, const int& end, std::set<int>&diffNum);
 
 	/**
 	* @brief  字符串是否为空
@@ -81,7 +81,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static	bool CheckIsEmpty(const char* str);
+	 bool CheckIsEmpty(const char* str);
 
 	/**
 	* @brief 得到crc
@@ -91,7 +91,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static DWORD GetCRC(const BYTE * str, int nLength);
+	  DWORD GetCRC(const BYTE * str, int nLength);
 
 
 	/**
@@ -101,20 +101,17 @@ namespace Tool
 	*
 	* @return
 	*/
-	static int AsInt(const char* str);
-	static int AsInt(const std::string& str) {
-		return AsInt(str.c_str());
-	};
+	  int AsInt(const char* str);
 
-	static int AsInt(const double& value) {
-		return static_cast<int>(value);
-	}
-	static int AsInt(const float& value) {
-		return static_cast<int>(value);
-	};
-	static int AsInt(int& value) {
-		return value;
-	};
+	  inline int AsInt(const double& value) {
+		  return  static_cast<int>(value);
+	  }
+	  inline int AsInt(const float& value) {
+		  return  static_cast<int>(value);
+	  };
+	  inline int AsInt(int& value) {
+		  return value;
+	  };
 
 	/**
 	* @brief string 转double
@@ -125,7 +122,7 @@ namespace Tool
 	* @return
 	*/
 
-	static DOUBLE AsDouble(const char* str,DOUBLE defaultVal = 0.0f);
+	  DOUBLE AsDouble(const char* str,DOUBLE defaultVal = 0.0f);
 	/**
 	* @brief string 转float
 	*
@@ -134,7 +131,7 @@ namespace Tool
 	*
 	* @return
 	*/
-	static  float AsFloat(const char* str, float defaultVal = 0.0f);
+	   float AsFloat(const char* str, float defaultVal = 0.0f);
 	/**
 	* @brief *类型转string
 	*
@@ -144,9 +141,18 @@ namespace Tool
 	* @return
 	*/
 	template<typename T>
-	static std::string AsString(T value) {
+	inline  std::string AsString(T value) {
 		return std::string(value);
 	}
+
+	template<>
+	inline std::string AsString(int value){
+		char str[13];
+		snprintf(str, 13,"%d", value);
+		return str;
+	}
+
+
 	template<class T>
 	struct Error {
 		enum {
@@ -154,33 +160,33 @@ namespace Tool
 		};
 	};
 	template<typename T, typename M>
-	static void AsTransform(T&out, M&in) {
-		static_assert(Error<T>::value, "error as Transorm");
+	  void AsTransform(T&out, M&in) {
+		 _assert(Error<T>::value, "error as Transorm");
 	}
 
 	template<typename M>
-	static void AsTransform(std::string& out, M&in) {
+	  void AsTransform(std::string& out, M&in) {
 		out = AsString(in);
 	}
 
 	template<typename M>
-	static void AsTransform(int& out, M&in) {
+	  void AsTransform(int& out, M&in) {
 		out = AsInt(in);
 	}
 
 	template<typename M>
-	static void AsTransform(double& out, M&in) {
+	  void AsTransform(double& out, M&in) {
 		out = AsDouble(in);
 	}
 
 	template<typename M>
-	static void AsTransform(float& out, M&in) {
+	  void AsTransform(float& out, M&in) {
 		out = AsFloat(in);
 	}
 
 
 	template<typename T, typename M>
-	static T AutoTransform(M m) {
+	  T AutoTransform(M m) {
 		T value;
 		AsTransform(value, m);
 		return value;
@@ -195,24 +201,24 @@ namespace Tool
 	*
 	* @param seconds
 	*/
-	static void SSleep(DWORD seconds);
+	  void SSleep(DWORD seconds);
 
 	/**
 	* @brief 毫秒级别定时器 当前线程会挂起
 	*
 	* @param msec
 	*/
-	static void MSleep(QWORD msec);
+	  void MSleep(QWORD msec);
 
 	/**
 	* @brief 微妙级别定时器 当前线程会挂起
 	*
 	* @param usec
 	*/
-	static void USleep(QWORD usec);
+	  void USleep(QWORD usec);
 
 	template<typename ResultType>
-	static void SplictString(const char* srcStr, std::vector<ResultType>& result, const char* splictStr) {
+	  void SplictString(const char* srcStr, std::vector<ResultType>& result, const char* splictStr) {
 
 		std::string src = srcStr;
 		std::string::size_type pos1 = 0, pos2 = 0;

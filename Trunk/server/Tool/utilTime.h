@@ -1,9 +1,7 @@
 #ifndef _STIME_H__
 #define _STIME_H__
 #include <ctime>
-#include <cstdio>
 #include <list>
-#include "../Define/PlatformDefine.h"
 
 namespace Tool {
 	/**

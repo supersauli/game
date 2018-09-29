@@ -1,0 +1,13 @@
+syntax = "proto3" ;
+package GateServer;
+message NewGate
+{
+	uint32 dwID = 1;
+	string strIP = 2;
+};
+
+message UserLogin
+{
+	uint32 dwID = 1;
+	bytes  str  = 2;
+}

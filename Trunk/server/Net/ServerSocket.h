@@ -2,6 +2,7 @@
 #define __SERVER_SOCKET_H__
 #include "../3rd/asio/include/asio.hpp"
 #include "Connection.h"
+#include "MessageMange.h"
 using namespace asio;
 class ServerSocket
 {
@@ -9,7 +10,7 @@ public:
 	ServerSocket(unsigned short port)
 		:_acceptor(_ioContext,tcp::endpoint(tcp::v4(),port))
 	{
-		Start();
+		Accept();
 	}
 	void Run()
 	{
@@ -17,16 +18,18 @@ public:
 	}
 
 private:
-	void Start()
+	void Accept()
 	{
 		_acceptor.async_accept(
 		[this](std::error_code ec, tcp::socket socket)
 		{
 			if (!ec)
 			{
-				std::make_shared<Connection>(std::move(socket))->Start();
+				auto connection = std::make_shared<Connection>(std::move(socket));
+				MessageManage::GetInstance().AddConnection(connection);
+				connection->Start();
 			}
-			Start();
+			Accept();
 
 		});
 	}

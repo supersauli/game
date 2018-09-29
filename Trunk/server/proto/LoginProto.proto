@@ -1,0 +1,11 @@
+syntax = "proto3";
+package LoginProto;
+
+
+
+
+
+message Result{
+	uint32 dwID = 1;
+	bool result = 2;
+}

@@ -1,7 +1,7 @@
 #ifndef _SCOMPARESS_H__
 #define _SCOMPARESS_H__
 
-namespace Tool
+namespace Util
 {
 	/**
 	 * @brief 压缩

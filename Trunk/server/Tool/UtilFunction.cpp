@@ -6,7 +6,7 @@ std::default_random_engine urandom(static_cast<DWORD>(time(NULL)));
 *
 * @return
 */
-int Tool::RandomInt() {
+int Util::RandomInt() {
 	return urandom();
 }
 
@@ -17,7 +17,7 @@ int Tool::RandomInt() {
 *
 * @return
 */
-int Tool::RandomInt(const int& max) {
+int Util::RandomInt(const int& max) {
 	std::uniform_int_distribution<int>	 dis(0, max);
 	return dis(urandom);
 }
@@ -30,7 +30,7 @@ int Tool::RandomInt(const int& max) {
 *
 * @return
 */
-int Tool::RandomInt(const int& min, const int& max) {
+int Util::RandomInt(const int& min, const int& max) {
 	std::uniform_int_distribution<int> dis(min, max);
 	return dis(urandom);
 }
@@ -40,7 +40,7 @@ int Tool::RandomInt(const int& min, const int& max) {
 *
 * @return
 */
-float Tool::RandomFloat() {
+float Util::RandomFloat() {
 	std::uniform_real_distribution<float> dis;
 	return dis(urandom);
 }
@@ -53,7 +53,7 @@ float Tool::RandomFloat() {
 * @return
 */
 
-float Tool::RandomFloat(const float max) {
+float Util::RandomFloat(const float max) {
 	std::uniform_real_distribution<float> dis(0.0f, max);
 	return dis(urandom);
 }
@@ -66,7 +66,7 @@ float Tool::RandomFloat(const float max) {
 *
 * @return
 */
-float Tool::RandomFloat(const float& min, const float& max) {
+float Util::RandomFloat(const float& min, const float& max) {
 	std::uniform_real_distribution<float> dis(min, max);
 	return dis(urandom);
 }
@@ -81,7 +81,7 @@ float Tool::RandomFloat(const float& min, const float& max) {
 *
 * @return
 */
-bool Tool::DifferentInt(const DWORD& num, const int& begin, const int& end, std::set<int>&diffNum) {
+bool Util::DifferentInt(const DWORD& num, const int& begin, const int& end, std::set<int>&diffNum) {
 	struct ValueGroup
 	{
 		int _min;
@@ -114,7 +114,7 @@ bool Tool::DifferentInt(const DWORD& num, const int& begin, const int& end, std:
 *
 * @return
 */
-bool Tool::CheckIsEmpty(const char* str) {
+bool Util::CheckIsEmpty(const char* str) {
 	return str == nullptr || str[0] == '\0';
 }
 
@@ -153,7 +153,7 @@ const DWORD table[] = {
 	0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94, 0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d,
 };
 
-DWORD Tool::GetCRC(const BYTE * buf, int nLength)
+DWORD Util::GetCRC(const BYTE * buf, int nLength)
 {
 	if (nLength < 1)
 		return 0xffffffff;
@@ -170,7 +170,7 @@ DWORD Tool::GetCRC(const BYTE * buf, int nLength)
 	return crc;
 }
 
-void Tool::SSleep(DWORD seconds)
+void Util::SSleep(DWORD seconds)
 {
 	/*struct timeval tv;
 	tv.tv_sec = seconds;
@@ -182,7 +182,7 @@ void Tool::SSleep(DWORD seconds)
 */
 }
 
-void Tool::MSleep(QWORD msec)
+void Util::MSleep(QWORD msec)
 {
 	//struct timeval tv;
 	//tv.tv_sec = msec / 1000;
@@ -194,7 +194,7 @@ void Tool::MSleep(QWORD msec)
 
 }
 
-void Tool::USleep(QWORD usec)
+void Util::USleep(QWORD usec)
 {
 	/*struct timeval tv;
 	tv.tv_sec = usec / 1000000;
@@ -207,21 +207,21 @@ void Tool::USleep(QWORD usec)
 
 }
 
-int Tool::AsInt(const char* str) {
+int Util::AsInt(const char* str) {
 	if (CheckIsEmpty(str)) {
 		return 0;
 	}
 	return atoi(str);
 };
 
-DOUBLE Tool::AsDouble(const char* str, DOUBLE defaultVal) {
+DOUBLE Util::AsDouble(const char* str, DOUBLE defaultVal) {
 	if (CheckIsEmpty(str)) {
 		return defaultVal;
 	}
 	return strtod(str, nullptr);
 }
 
-float Tool::AsFloat(const char* str, float defaultVal) {
+float Util::AsFloat(const char* str, float defaultVal) {
 	if (CheckIsEmpty(str)) {
 		return defaultVal;
 	}
