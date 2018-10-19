@@ -10,9 +10,9 @@ class Connection :public std::enable_shared_from_this<Connection>
 {
 public:
 	
-	Connection(tcp::socket socket)
-		: _socket(std::move(socket)),
-		 _consummer(_socket)
+	Connection(ip::tcp::socket socket)
+		: _socket(std::move(socket))
+		 //_consummer(_socket)
 	{
 		_uid = global++;
 	}
@@ -72,7 +72,7 @@ private:
 		if(!ec)
 		{
 			std::string msg;
-			_consummer.Read(ec,msg);
+			//_consummer.Read(ec,msg);
 			_recvCB(_uid,msg);
 		}
 		Accident(ec);
@@ -83,7 +83,7 @@ private:
 		_writeInProgress = false;
 		if(!ec&&!_msg.empty())
 		{
-			_consummer.Write(ec, _msg);
+			//_consummer.Write(ec, _msg);
 		}
 		Accident(ec);
 	}
@@ -105,14 +105,14 @@ private:
 	void CloseSocket()
 	{
 		asio::error_code ec;
-		_socket.shutdown(tcp::socket::shutdown_send,ec);
+//		_socket.shutdown(tcp::socket::shutdown_send,ec);
 		_socket.close(ec);
 	}
 public:
 	std::function<void(DWORD, std::string&)> _recvCB;
 private:
 	asio::ip::tcp::socket _socket;
-	Consummer  _consummer;
+	//Consummer  _consummer;
 	bool _readInProgress{false};
 	bool _writeInProgress{false};
 	std::string _msg;
