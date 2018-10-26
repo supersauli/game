@@ -36,6 +36,7 @@ namespace XLua
 				translator.RegisterPushAndGetAndUpdate<UnityEngine.Ray2D>(translator.PushUnityEngineRay2D, translator.Get, translator.UpdateUnityEngineRay2D);
 				translator.RegisterPushAndGetAndUpdate<Tutorial.TestEnum>(translator.PushTutorialTestEnum, translator.Get, translator.UpdateTutorialTestEnum);
 				translator.RegisterPushAndGetAndUpdate<Tutorial.DrivenClass.TestEnumInner>(translator.PushTutorialDrivenClassTestEnumInner, translator.Get, translator.UpdateTutorialDrivenClassTestEnumInner);
+				translator.RegisterPushAndGetAndUpdate<ListenerType>(translator.PushListenerType, translator.Get, translator.UpdateListenerType);
 			
 			}
         }
@@ -740,6 +741,90 @@ namespace XLua
             }
         }
         
+        int ListenerType_TypeID = -1;
+		int ListenerType_EnumRef = -1;
+        
+        public void PushListenerType(RealStatePtr L, ListenerType val)
+        {
+            if (ListenerType_TypeID == -1)
+            {
+			    bool is_first;
+                ListenerType_TypeID = getTypeId(L, typeof(ListenerType), out is_first);
+				
+				if (ListenerType_EnumRef == -1)
+				{
+				    Utils.LoadCSTable(L, typeof(ListenerType));
+				    ListenerType_EnumRef = LuaAPI.luaL_ref(L, LuaIndexes.LUA_REGISTRYINDEX);
+				}
+				
+            }
+			
+			if (LuaAPI.xlua_tryget_cachedud(L, (int)val, ListenerType_EnumRef) == 1)
+            {
+			    return;
+			}
+			
+            IntPtr buff = LuaAPI.xlua_pushstruct(L, 4, ListenerType_TypeID);
+            if (!CopyByValue.Pack(buff, 0, (int)val))
+            {
+                throw new Exception("pack fail fail for ListenerType ,value="+val);
+            }
+			
+			LuaAPI.lua_getref(L, ListenerType_EnumRef);
+			LuaAPI.lua_pushvalue(L, -2);
+			LuaAPI.xlua_rawseti(L, -2, (int)val);
+			LuaAPI.lua_pop(L, 1);
+			
+        }
+		
+        public void Get(RealStatePtr L, int index, out ListenerType val)
+        {
+		    LuaTypes type = LuaAPI.lua_type(L, index);
+            if (type == LuaTypes.LUA_TUSERDATA )
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != ListenerType_TypeID)
+				{
+				    throw new Exception("invalid userdata for ListenerType");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+				int e;
+                if (!CopyByValue.UnPack(buff, 0, out e))
+                {
+                    throw new Exception("unpack fail for ListenerType");
+                }
+				val = (ListenerType)e;
+                
+            }
+            else
+            {
+                val = (ListenerType)objectCasters.GetCaster(typeof(ListenerType))(L, index, null);
+            }
+        }
+		
+        public void UpdateListenerType(RealStatePtr L, int index, ListenerType val)
+        {
+		    
+            if (LuaAPI.lua_type(L, index) == LuaTypes.LUA_TUSERDATA)
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != ListenerType_TypeID)
+				{
+				    throw new Exception("invalid userdata for ListenerType");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+                if (!CopyByValue.Pack(buff, 0,  (int)val))
+                {
+                    throw new Exception("pack fail for ListenerType ,value="+val);
+                }
+            }
+			
+            else
+            {
+                throw new Exception("try to update a data with lua type:" + LuaAPI.lua_type(L, index));
+            }
+        }
+        
         
 		// table cast optimze
 		
@@ -811,6 +896,12 @@ namespace XLua
 				translator.PushTutorialDrivenClassTestEnumInner(L, array[index]);
 				return true;
 			}
+			else if (type == typeof(ListenerType[]))
+			{
+			    ListenerType[] array = obj as ListenerType[];
+				translator.PushListenerType(L, array[index]);
+				return true;
+			}
             return false;
 		}
 		
@@ -874,6 +965,12 @@ namespace XLua
 			else if (type == typeof(Tutorial.DrivenClass.TestEnumInner[]))
 			{
 			    Tutorial.DrivenClass.TestEnumInner[] array = obj as Tutorial.DrivenClass.TestEnumInner[];
+				translator.Get(L, obj_idx, out array[array_idx]);
+				return true;
+			}
+			else if (type == typeof(ListenerType[]))
+			{
+			    ListenerType[] array = obj as ListenerType[];
 				translator.Get(L, obj_idx, out array[array_idx]);
 				return true;
 			}

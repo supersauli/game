@@ -46,6 +46,126 @@ namespace XLua.CSObjectWrap
             translator.DelayWrapLoader(typeof(Tutorial.DrivenClassExtensions), TutorialDrivenClassExtensionsWrap.__Register);
         
         
+            translator.DelayWrapLoader(typeof(GUIManager), GUIManagerWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(LuaManager), LuaManagerWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUISpriteAnimation), UGUISpriteAnimationWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIAtlas), UGUIAtlasWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UVData), UVDataWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIAysnSprite), UGUIAysnSpriteWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIDragComponent), UGUIDragComponentWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIImageCD), UGUIImageCDWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIImageLoader), UGUIImageLoaderWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIImageProg), UGUIImageProgWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIImageSlider), UGUIImageSliderWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UnityEngine.UI.UGUIInputField), UnityEngineUIUGUIInputFieldWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUINoDrawingRayCast), UGUINoDrawingRayCastWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUISpriteName), UGUISpriteNameWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITweenCanvasGroup), UGUITweenCanvasGroupWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITweenColor), UGUITweenColorWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITweenFill), UGUITweenFillWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITweenPosition), UGUITweenPositionWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITweenRotation), UGUITweenRotationWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITweenScale), UGUITweenScaleWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITweenTop), UGUITweenTopWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIVideoPlayer), UGUIVideoPlayerWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_CB), S_CBWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_CC), S_CCWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_CT), S_CTWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_LB), S_LBWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_LC), S_LCWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_LT), S_LTWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_RB), S_RBWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_RC), S_RCWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(S_RT), S_RTWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(Suitable.SDEFINE), SuitableSDEFINEWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(TextGradient), TextGradientWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITextWriter), UGUITextWriterWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIEventListener), UGUIEventListenerWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(ListenerType), ListenerTypeWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUIEventListenerEx), UGUIEventListenerExWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(UGUITool), UGUIToolWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(Allocator), AllocatorWrap.__Register);
+        
+        
+            translator.DelayWrapLoader(typeof(LocalizationLabel), LocalizationLabelWrap.__Register);
+        
+        
         
         }
         

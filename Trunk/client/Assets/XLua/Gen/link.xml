@@ -10,6 +10,46 @@
 		<type fullname="Tutorial.DrivenClass+TestEnumInner" preserve="all"/>
 		<type fullname="Tutorial.ICalc" preserve="all"/>
 		<type fullname="Tutorial.DrivenClassExtensions" preserve="all"/>
+		<type fullname="GUIManager" preserve="all"/>
+		<type fullname="LuaManager" preserve="all"/>
+		<type fullname="UGUISpriteAnimation" preserve="all"/>
+		<type fullname="UGUIAtlas" preserve="all"/>
+		<type fullname="UVData" preserve="all"/>
+		<type fullname="UGUIAysnSprite" preserve="all"/>
+		<type fullname="UGUIDragComponent" preserve="all"/>
+		<type fullname="UGUIImageCD" preserve="all"/>
+		<type fullname="UGUIImageLoader" preserve="all"/>
+		<type fullname="UGUIImageProg" preserve="all"/>
+		<type fullname="UGUIImageSlider" preserve="all"/>
+		<type fullname="UnityEngine.UI.UGUIInputField" preserve="all"/>
+		<type fullname="UGUINoDrawingRayCast" preserve="all"/>
+		<type fullname="UGUISpriteName" preserve="all"/>
+		<type fullname="UGUITweenCanvasGroup" preserve="all"/>
+		<type fullname="UGUITweenColor" preserve="all"/>
+		<type fullname="UGUITweenFill" preserve="all"/>
+		<type fullname="UGUITweenPosition" preserve="all"/>
+		<type fullname="UGUITweenRotation" preserve="all"/>
+		<type fullname="UGUITweenScale" preserve="all"/>
+		<type fullname="UGUITweenTop" preserve="all"/>
+		<type fullname="UGUIVideoPlayer" preserve="all"/>
+		<type fullname="S_CB" preserve="all"/>
+		<type fullname="S_CC" preserve="all"/>
+		<type fullname="S_CT" preserve="all"/>
+		<type fullname="S_LB" preserve="all"/>
+		<type fullname="S_LC" preserve="all"/>
+		<type fullname="S_LT" preserve="all"/>
+		<type fullname="S_RB" preserve="all"/>
+		<type fullname="S_RC" preserve="all"/>
+		<type fullname="S_RT" preserve="all"/>
+		<type fullname="Suitable.SDEFINE" preserve="all"/>
+		<type fullname="TextGradient" preserve="all"/>
+		<type fullname="UGUITextWriter" preserve="all"/>
+		<type fullname="UGUIEventListener" preserve="all"/>
+		<type fullname="ListenerType" preserve="all"/>
+		<type fullname="UGUIEventListenerEx" preserve="all"/>
+		<type fullname="UGUITool" preserve="all"/>
+		<type fullname="Allocator" preserve="all"/>
+		<type fullname="LocalizationLabel" preserve="all"/>
 		
 	</assembly>
 

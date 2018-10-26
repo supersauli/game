@@ -47,11 +47,18 @@ public class XluaLoad : MonoBehaviour {
          _luaenv = new LuaEnv();
         //LoadLuaStringTest();
         // LoadLuaFileTest();
-	    LoadLuaFileExtern();
-	    //CToLuaData();
-	    transform.localScale = new Vector3(-1,0,0);
+        //LoadLuaFileExtern();
+        //CToLuaData();
+        //transform.localScale = new Vector3(-1,0,0);
 
+	    LuaManager.Instance.LuaStart();
+        LoadMenu();
 	}
+
+    void LoadMenu()
+    {
+        GUIManager.Instance.CreateView("MenuButton");
+    }
 
     void CToLuaData()
     {

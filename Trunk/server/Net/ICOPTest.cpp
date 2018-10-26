@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "WinServerSocket.h"
 #include "WinClientSocket.h"
-int port = 2333;
+int port = 4333;
 void ServerSocket()
 {
 	WinServerSocket socket(port);

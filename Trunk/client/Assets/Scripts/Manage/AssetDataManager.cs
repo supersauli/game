@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+
 public class AssetDataManager : IResManager {
 
     void Awake()
@@ -250,7 +251,7 @@ public class AssetDataManager : IResManager {
         //LogManager.Instance.LogError(GameTools.StringBuilder("Assets/AssetData/Lua/Game/UI/", key, ".lua.txt"));
         TextAsset text = null;
 #if UNITY_EDITOR
-        string path = GameTools.StringBuilder("Assets/AssetData/Lua/Game/UI/", key, ".lua.txt");
+        string path = GameTools.StringBuilder("Assets/AssetData/Lua/UI/", key, ".lua.txt");
         
         text = AssetDatabase.LoadAssetAtPath(path,typeof(TextAsset)) as TextAsset;
         if (text == null)

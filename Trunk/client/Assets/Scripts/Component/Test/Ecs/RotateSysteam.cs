@@ -14,10 +14,10 @@ public class RotateSysteam : JobComponentSystem
         public ComponentDataArray<Rotation> _rotate;
         public readonly int Length;
     }
-    protected override void OnCreateManager()
-    {
-        base.OnCreateManager();
-    }
+    //protected override void OnCreateManager()
+    //{
+    //    base.OnCreateManager();
+    //}
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
         var rotateJob = new RotateJob
@@ -37,10 +37,10 @@ public class RotateSysteam : JobComponentSystem
         public ComponentDataArray<Rotation> _rotation;
         public void Execute(int index)
         {
-            var rotation= _rotation[index];
+            //var rotation= _rotation[index];
 
-            _rotation[index] = new Unity.Transforms.Rotation
-            { Value = new quaternion(0, rotation.Value.value.y*10+1, 0.0f, 0)};
+            //_rotation[index] = new Unity.Transforms.Rotation
+            //{ Value = new quaternion(0, rotation.Value.value.y*10+1, 0.0f, 0)};
         }
     }
 

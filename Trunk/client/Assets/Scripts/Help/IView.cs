@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using SysUtils;
 using UnityEngine.Video;
+using XLua;
 
 [DisallowMultipleComponent]
 public class IView : MonoBehaviour, IDataView, IRecord, ITable
@@ -171,7 +172,7 @@ public class IView : MonoBehaviour, IDataView, IRecord, ITable
     public void SetPanelConfig(PanelData data)
     {
         mUIConf = data;
-        
+        mUseLua = true;
         if (mUIConf != null)
         {
             ViewPopEnum = (GUIPopEnum)data.popType;
@@ -217,11 +218,15 @@ public class IView : MonoBehaviour, IDataView, IRecord, ITable
     protected Action<string, int> mOnRecordGrid;
     protected Action<string, int, int> mOnRecordSingleGrid;
     private Action<string> mOnRecordClear;
-
+    [CSharpCallLua]
     public delegate void OnTableAddRow(string tableName, VarList args, int iRows, int Cols, int startIndex);
+    [CSharpCallLua]
     public delegate void OnTableSingleChange(string tableName, VarList args, int iRow, int Col, int Rows, int Cols, int startIndex);
+    [CSharpCallLua]
     public delegate void OnTableChange(string tableName, VarList args, int iRow, int Rows, int Cols, int startIndex);
+    [CSharpCallLua]
     public delegate void OnTableDeleteRow(string tableName, VarList args, int iRow, int Rows, int Cols, int startIndex);
+    [CSharpCallLua]
     public delegate void OnTableClear(string tableName, VarList args, int startIndex);
 
     private OnTableAddRow mOnTableAddRow;
@@ -229,56 +234,56 @@ public class IView : MonoBehaviour, IDataView, IRecord, ITable
     private OnTableChange mOnTableChange;
     private OnTableDeleteRow mOnTableDeleteRow;
     private OnTableClear mOnTableClear;
-
+    private LuaTable mScript;
     public virtual void OnPreView()
     {
         if (mUseLua)
         {
-            //string luaName = GameTools.StringBuilder(this.name, "Ctrl");
-            ////string uilua = LuaManager.Instance.GetUILua(luaName);
-            ////mScript = LuaManager.Instance.Lua.NewTable();
-            ////LuaTable meta = LuaManager.Instance.Lua.NewTable();
-            //meta.Set("__index", LuaManager.Instance.Lua.Global);
-            ////mScript.SetMetaTable(meta);
-            //meta.Dispose();
-            ////mScript.Set("self", this);
-            ////LuaManager.Instance.Lua.DoString(uilua, luaName, mScript);
-            ////mScript.Get("start", out mLuaStart);
-            //mScript.Get("startint", out mLuaStartInt);
-            //mScript.Get("update", out mLuaUpdate);
-            //mScript.Get("ondestroy", out mLuaDestroy);
-            //mScript.Get("onshow", out mLuaShow);
-            //mScript.Get("onhide", out mLuaHide);
-            //mScript.Get("onresume", out mLuaResume);
-            //mScript.Get("sortorder", out mLuaSortOrder);
+            string luaName = GameTools.StringBuilder(this.name, "Ctrl");
+            string uilua = LuaManager.Instance.GetUILua(luaName);
+            mScript = LuaManager.Instance.Lua.NewTable();
+            LuaTable meta = LuaManager.Instance.Lua.NewTable();
+            meta.Set("__index", LuaManager.Instance.Lua.Global);
+            mScript.SetMetaTable(meta);
+            meta.Dispose();
+            mScript.Set("self", this);
+            LuaManager.Instance.Lua.DoString(uilua, luaName, mScript);
+            mScript.Get("start", out mLuaStart);
+            mScript.Get("startint", out mLuaStartInt);
+            mScript.Get("update", out mLuaUpdate);
+            mScript.Get("ondestroy", out mLuaDestroy);
+            mScript.Get("onshow", out mLuaShow);
+            mScript.Get("onhide", out mLuaHide);
+            mScript.Get("onresume", out mLuaResume);
+            mScript.Get("sortorder", out mLuaSortOrder);
 
-            //mScript.Get("viewcreate", out mOnCreateView);
-            //mScript.Get("viewdelete", out mOnDeleteView);
-            //mScript.Get("viewadd", out mOnViewAdd);
-            //mScript.Get("viewremove", out mOnViewRemove);
-            //mScript.Get("viewprop", out mOnViewProperty);
-            //mScript.Get("viewobjectprop", out mOnViewObjectProperty);
-            //mScript.Get("viewobjectpropchange", out mOnViewObjectPropertyChange);
+            mScript.Get("viewcreate", out mOnCreateView);
+            mScript.Get("viewdelete", out mOnDeleteView);
+            mScript.Get("viewadd", out mOnViewAdd);
+            mScript.Get("viewremove", out mOnViewRemove);
+            mScript.Get("viewprop", out mOnViewProperty);
+            mScript.Get("viewobjectprop", out mOnViewObjectProperty);
+            mScript.Get("viewobjectpropchange", out mOnViewObjectPropertyChange);
 
 
-            //mScript.Get("recordtable", out mOnRecordTable);
-            //mScript.Get("recordaddrow", out mOnRecordAddRow);
-            //mScript.Get("recordremoverow", out mOnRecordRemoveRow);
-            //mScript.Get("recordbeforeremoverow", out mOnRecordBeforeRemoveRow);
-            //mScript.Get("recordgrid", out mOnRecordGrid);
-            //mScript.Get("recordsinglegrid", out mOnRecordSingleGrid);
-            //mScript.Get("recordclear", out mOnRecordClear);
+            mScript.Get("recordtable", out mOnRecordTable);
+            mScript.Get("recordaddrow", out mOnRecordAddRow);
+            mScript.Get("recordremoverow", out mOnRecordRemoveRow);
+            mScript.Get("recordbeforeremoverow", out mOnRecordBeforeRemoveRow);
+            mScript.Get("recordgrid", out mOnRecordGrid);
+            mScript.Get("recordsinglegrid", out mOnRecordSingleGrid);
+            mScript.Get("recordclear", out mOnRecordClear);
 
-            //mScript.Get("tableaddrow", out mOnTableAddRow);
-            //mScript.Get("tablesinglechange", out mOnTableSingleChange);
-            //mScript.Get("tablechange", out mOnTableChange);
-            //mScript.Get("tabledeleterow", out mOnTableDeleteRow);
-            //mScript.Get("tableclear", out mOnTableClear);
+            mScript.Get("tableaddrow", out mOnTableAddRow);
+            mScript.Get("tablesinglechange", out mOnTableSingleChange);
+            mScript.Get("tablechange", out mOnTableChange);
+            mScript.Get("tabledeleterow", out mOnTableDeleteRow);
+            mScript.Get("tableclear", out mOnTableClear);
 
-            //mScript.Get("posshow", out mLuaPosShow);
-            //mScript.Get("poshide", out mLuaPosHide);
+            mScript.Get("posshow", out mLuaPosShow);
+            mScript.Get("poshide", out mLuaPosHide);
 
-            //LuaManager.Instance.AddUITable(this.name, mScript);
+            LuaManager.Instance.AddUITable(this.name, mScript);
         }
     }
 
@@ -392,10 +397,10 @@ public class IView : MonoBehaviour, IDataView, IRecord, ITable
         //    bgm.PlayBGM();
         //}
 
-        //if (mLuaShow != null)
-        //{
-        //    mLuaShow();
-        //}
+        if (mLuaShow != null)
+        {
+            mLuaShow();
+        }
     }
 
     public virtual void OnPosShow()

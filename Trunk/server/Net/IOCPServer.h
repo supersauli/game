@@ -125,7 +125,7 @@ int IcopServer()
 	cout << "本服务器已准备就绪，正在等待客户端的接入...\n";
 
 	// 创建用于发送数据的线程
-	HANDLE sendThread = CreateThread(NULL, 0, ServerSendThread, 0, 0, NULL);
+	//HANDLE sendThread = CreateThread(NULL, 0, ServerSendThread, 0, 0, NULL);
 
 	while (true) {
 		PER_HANDLE_DATA * PerHandleData = NULL;
@@ -156,16 +156,17 @@ int IcopServer()
 		// 在新建的套接字上投递一个或多个异步
 		// WSARecv或WSASend请求，这些I/O请求完成后，工作者线程会为I/O请求提供服务	
 		// 单I/O操作数据(I/O重叠)
-		//LPPER_IO_OPERATION_DATA PerIoData = NULL;
-		//PerIoData = (LPPER_IO_OPERATION_DATA)GlobalAlloc(GPTR, sizeof(PER_IO_OPERATEION_DATA));
-		//ZeroMemory(&(PerIoData->overlapped), sizeof(OVERLAPPED));
-		//PerIoData->databuff.len = 1024;
-		//PerIoData->databuff.buf = PerIoData->buffer;
-		//PerIoData->operationType = 0;	// read
+		LPPER_IO_OPERATION_DATA PerIoData = NULL;
+		PerIoData = (LPPER_IO_OPERATION_DATA)GlobalAlloc(GPTR, sizeof(PER_IO_OPERATEION_DATA));
+		ZeroMemory(&(PerIoData->overlapped), sizeof(OVERLAPPED));
+		PerIoData->databuff.len = 1024;
+		PerIoData->databuff.buf = PerIoData->buffer;
+		PerIoData->operationType = 0;	// read
 
-		//DWORD RecvBytes;
-		//DWORD Flags = 0;
-		//WSARecv(PerHandleData->socket, &(PerIoData->databuff), 1, &RecvBytes, &Flags, &(PerIoData->overlapped), NULL);
+		DWORD RecvBytes;
+		DWORD Flags = 0;
+		int ret1 = WSARecv(PerHandleData->socket, &(PerIoData->databuff), 1, &RecvBytes, &Flags, &(PerIoData->overlapped), NULL);
+		cout << ret1 << endl;
 		//WSARecv(PerHandleData->socket, &(PerIoData->databuff), 1, &RecvBytes, &Flags, &PerIoData, NULL);
 	}
 

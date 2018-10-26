@@ -673,10 +673,23 @@ namespace XLua
         {
             try
             {
-                string filename = LuaAPI.lua_tostring(L, 1).Replace('.', '/') + ".lua";
-
-                // Load with Unity3D resources
-                UnityEngine.TextAsset file = (UnityEngine.TextAsset)UnityEngine.Resources.Load(filename);
+                UnityEngine.TextAsset file = null;
+                string filename = "";
+#if UNITY_EDITOR
+                filename = GameTools.StringBuilder("Assets/AssetData/", LuaAPI.lua_tostring(L, 1).Replace('.', '/'), ".lua.txt");
+                file = (UnityEngine.TextAsset)UnityEditor.AssetDatabase.LoadAssetAtPath(filename, typeof(UnityEngine.TextAsset));
+                if (file == null)
+                {
+                    filename = LuaAPI.lua_tostring(L, 1).Replace('.', '/') + ".lua";
+                    file = (UnityEngine.TextAsset)UnityEngine.Resources.Load(filename);
+                }
+#else
+// Load with Unity3D resources
+                filename = LuaAPI.lua_tostring(L, 1).Replace('.', '/') + ".lua";
+                
+                file = (UnityEngine.TextAsset)UnityEngine.Resources.Load(filename);
+#endif
+                //UnityEngine.TextAsset file = (UnityEngine.TextAsset)UnityEditor.AssetDatabase.LoadAssetAtPath(filename, typeof(UnityEngine.TextAsset));
                 if (file == null)
                 {
                     LuaAPI.lua_pushstring(L, string.Format(

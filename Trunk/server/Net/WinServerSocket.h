@@ -5,8 +5,6 @@
 
 
 
-#pragma comment(lib,"Ws2_32.lib")
-#pragma comment(lib,"Kernel32.lib")
 //TODO ½ûÓÃ¿½±´
 class WinServerSocket
 {
@@ -15,12 +13,12 @@ public:
 	void SetPort(int port);
 	int GetPort();
 	void Run(int threadNum = 1);
-	DWORD WINAPI ReadThread(LPVOID CompletionPortID);
+	
 	DWORD  Send(int socket,const char* buf);
 private:
 	int InitData();
 	void InitReadThread(int threadNum);
-	int GetSysteamProcessNum();
+	int GetSysteamProcessNum() const;
 	void InitSocket();
 	void DoAccept();
 	HANDLE _completionPort;

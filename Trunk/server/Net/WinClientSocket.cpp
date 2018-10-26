@@ -1,5 +1,6 @@
 #include "WinClientSocket.h"
 #include <iostream>
+#include "../Tool/UtilFunction.h"
 #pragma comment(lib, "Ws2_32.lib")	
 void WinClientSocket::Run()
 {
@@ -35,12 +36,16 @@ void WinClientSocket::Send()
 		return;
 	}
 	send(_socket,buf.c_str(),100,0);
-
+	std::cout << "client send "<< buf.c_str()<<std::endl;
 }
 
 void WinClientSocket::Recv()
 {
 	char buf[1024] = {0};
-	recv(_socket,buf,1000,0);
-	printf("client recv %s",buf);
+	recv(_socket,buf,1000,100);
+	if(Util::CheckIsEmpty(buf))
+	{
+		return;
+	}
+	printf("client recv %s \n",buf);
 }

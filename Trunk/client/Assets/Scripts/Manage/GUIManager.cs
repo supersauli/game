@@ -22,7 +22,8 @@ public enum GUILayerDepth
     GLD_TOP
 }
 
-
+[XLua.Hotfix]
+[XLua.LuaCallCSharp]
 public class GUIManager : MonoBehaviour
 {
     private Transform mParent;
@@ -56,8 +57,8 @@ public class GUIManager : MonoBehaviour
             mParent = value.Find("CanvasUI");
             //mUICanvasRect = mParent.GetComponent<RectTransform>();
             mUICanvas = mParent.GetComponent<Canvas>();
-            ExtendCanvas = value.Find("CanvasExtend").GetComponent<Canvas>();
-            ExtendRectTransform = ExtendCanvas.GetComponent<RectTransform>();
+            //ExtendCanvas = value.Find("CanvasExtend").GetComponent<Canvas>();
+            //ExtendRectTransform = ExtendCanvas.GetComponent<RectTransform>();
             //mPreviewMask = value.Find("CanvasExtend/mask");
             //mTargetImage = value.Find("CanvasExtend/target").GetComponent<Image>();
         }
@@ -114,6 +115,7 @@ public class GUIManager : MonoBehaviour
     void Awake()
     {
         _Instance = this;
+       Parent = GameObject.Find("UIRoot").transform;
     }
 
     private Vector3 orignPos = Vector3.zero;
@@ -146,7 +148,7 @@ public class GUIManager : MonoBehaviour
         //        return;
         //    }
         //}
-        string path = "";
+        string path = "Prefab/UI/";
         //if (PluginsManager.Instance.IsIPhoneX())
         //{
         //    if (data.suitpx)
@@ -173,6 +175,9 @@ public class GUIManager : MonoBehaviour
         //{
         //    path = GameTools.StringBuilder(ResourcesDefine.mUIPath, uiName);
         //}
+
+        path += uiName;
+
         ArrayList list = new ArrayList();
         list.Add(uiName);
         list.Add(flag);
@@ -216,7 +221,7 @@ public class GUIManager : MonoBehaviour
 
         PanelData data = UIPanelData.GetUIPanel(uiName);
 
-        bool useLua = false;
+        bool useLua = true;
 
         if (data != null)
         {
@@ -245,7 +250,7 @@ public class GUIManager : MonoBehaviour
         view.OnStart(args);
         view.RegisterEvent();
         canvas.overrideSorting = true;
-        view.SortOrder = defaultSortIndex + data.layer * 1000 + data.index * 10;//view.ViewOrder;
+        view.SortOrder = defaultSortIndex;// + data.layer * 1000 + data.index * 10;//view.ViewOrder;
 
         if (!mViewNameDic.ContainsKey(uiName))
         {

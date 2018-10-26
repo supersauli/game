@@ -14,8 +14,10 @@ public class EcsSysteam : MonoBehaviour {
 
     public GameObject _prefab;
     // Use this for initialization
-    private EntityArchetype _blockArchetype; 
-	void Start () {
+    private EntityArchetype _blockArchetype;
+
+    void CreateSingleEntity()
+    {
         var entityManager = World.Active.GetOrCreateManager<EntityManager>();
         _blockArchetype = entityManager.CreateArchetype(
             typeof(Position)
@@ -28,7 +30,10 @@ public class EcsSysteam : MonoBehaviour {
                 material = blockMaterial,
             });
 
-	    var entityArray = new NativeArray<Unity.Entities.Entity>(10000, Unity.Collections.Allocator.Temp );
+    }
+	void Start () {
+        var entityManager = World.Active.GetOrCreateManager<EntityManager>();
+      	var entityArray = new NativeArray<Unity.Entities.Entity>(10000, Unity.Collections.Allocator.Temp );
 	    entityManager.Instantiate(_prefab,entityArray);
 	    int index = 0;
         for (int i = 0; i < 100; i++)
@@ -41,12 +46,9 @@ public class EcsSysteam : MonoBehaviour {
                         Value = new float3(i, 0, j)
                     });
                 entityManager.SetComponentData<SelfEntity>(entity,new SelfEntity{ _entity = entity});
-
             }
         }
         entityArray.Dispose();
-
-
     }
 
     // Update is called once per frame

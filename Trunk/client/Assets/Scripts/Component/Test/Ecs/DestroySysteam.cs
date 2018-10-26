@@ -13,9 +13,8 @@ public class DestroySysteam :JobComponentSystem
 
     struct DestroyGroup
     {
-         public ComponentDataArray<Position> _postion;
+        [ReadOnly] public ComponentDataArray<Position> _position;
         [ReadOnly] public ComponentDataArray<SelfEntity> _selfEntity;
-     public GameObjectArray gameObjects;
         public readonly int Length;
     }
     [Inject] DestroyGroup _destroyGroup;
@@ -39,41 +38,50 @@ public class DestroySysteam :JobComponentSystem
 
 
     //}
-
-
+    public class RemoveDeadBarrier : BarrierSystem
+    {
+    }
+    [Inject] private RemoveDeadBarrier m_RemoveDeadBarrier;
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
         int boidCount = _destroyGroup.Length;
         //var position = new NativeArray<Position>(boidCount, Unity.Collections.Allocator.TempJob, NativeArrayOptions.UninitializedMemory);
         //var selfEntity = new NativeArray<SelfEntity>(boidCount, Unity.Collections.Allocator.TempJob, NativeArrayOptions.UninitializedMemory);
-
+       
         var job = new Destroy
         {
-            //_position = position,
-            //_selfEntity = selfEntity
+            _position = _destroyGroup._position,
+            _selfEntity = _destroyGroup._selfEntity,
+            _commands = m_RemoveDeadBarrier.CreateCommandBuffer()
         };
         return job.Schedule(boidCount, 64, inputDeps);
     }
-
+   
 
     [BurstCompile]
     struct Destroy : IJobParallelFor
     {
-        public NativeArray<Position> _position;
-        [ReadOnly] public NativeArray<SelfEntity> _selfEntity;
+        //  [ReadOnly]public NativeArray<Position> _position;
+        //[ReadOnly] public NativeArray<SelfEntity> _selfEntity;
+        [ReadOnly] public ComponentDataArray<Position> _position;
+        [ReadOnly] public ComponentDataArray<SelfEntity> _selfEntity;
+        [ReadOnly] public EntityCommandBuffer _commands;
         private GameObjectArray gameObjects;
+       
         public void Execute(int index)
         {
-            //var entityManager = World.Active.GetOrCreateManager<EntityManager>();
-            //var postion = _position[index];
-            //if (postion.Value.x > 120)
-            //{
-            //    entityManager.DestroyEntity(_selfEntity[index]._entity);
-            ////}
-            //_position[index] = new Position
-            //{
-            //    Value = new float3(postion.Value.x + 1, postion.Value.y, postion.Value.z)
-            //};
+            
+            var postion = _position[index];
+            if (postion.Value.x > 120)
+               {
+                
+                _commands.DestroyEntity(_selfEntity[index]._entity);
+                //Debug.Log("destroy" + index);
+                //_position[index] = new Position
+                //{
+                //   Value = new float3(postion.Value.x + 1, postion.Value.y, postion.Value.z)
+                //};
+            }
         }
     }
 

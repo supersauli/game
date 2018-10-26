@@ -40,6 +40,9 @@
     <Filter Include="proto">
       <UniqueIdentifier>{7eb355dc-0a9d-4eb1-b3fe-28cd23bcf65e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rd\gtest">
+      <UniqueIdentifier>{46e327df-3f88-4de1-ac52-8cbc61363cbd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tool\Compress.cpp">
@@ -65,6 +68,18 @@
     </ClCompile>
     <ClCompile Include="proto\LoginProto.pb.cc">
       <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\ICOPTest.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTesting\GoogleTest.cpp">
+      <Filter>UnitTesting</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\WinServerSocket.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\WinClientSocket.cpp">
+      <Filter>Net</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1768,6 +1783,87 @@
     </ClInclude>
     <ClInclude Include="proto\LoginProto.pb.h">
       <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\ICOPClient.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\IOCPServer.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest-death-test.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest-message.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest-param-test.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest-printers.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest-spi.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest-test-part.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest-typed-test.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest_pred_impl.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\gtest_prod.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\custom\gtest-port.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\custom\gtest-printers.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\custom\gtest.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-death-test-internal.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-filepath.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-internal.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-linked_ptr.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-param-util-generated.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-param-util.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-port-arch.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-port.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-string.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\gtest\internal\gtest-type-util.h">
+      <Filter>3rd\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\WinServerSocket.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\WinClientSocket.h">
+      <Filter>Net</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

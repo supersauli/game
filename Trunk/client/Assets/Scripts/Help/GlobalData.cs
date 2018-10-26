@@ -366,7 +366,7 @@ public class GlobalData : MonoBehaviour
     {
         get
         {
-            return false;
+            return true;
         }
     }
 
